@@ -8,7 +8,7 @@ export default function RootLayout({ children }: Props) {
       <body>
         <nav style={{ display: "flex", gap: "20px", padding: "20px" }}>
           <a href="/">Home</a>
-          <a href="/experience">Experience</a>
+          <a href="/experience">xperience</a>
           <a href="/projects">Projects</a>
           <a href="/contact">Contact</a>
         </nav>
