@@ -1,3 +1,5 @@
+import Navbar from "./components/Navbar";
+
 type Props = {
   children: React.ReactNode;
 };
@@ -5,15 +7,26 @@ type Props = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body>
-        <nav style={{ display: "flex", gap: "20px", padding: "20px" }}>
-          <a href="/">Home</a>
-          <a href="/experience">xperience</a>
-          <a href="/projects">Projects</a>
-          <a href="/contact">Contact</a>
-        </nav>
+      <body
+        style={{
+          margin: 0,
+          fontFamily: "system-ui, -apple-system, sans-serif",
+          background: "#f1ebeb",
+          color: "#111",
+          lineHeight: 1.5
+        }}
+      >
+        <Navbar />
 
-        {children}
+        <div
+          style={{
+            paddingTop: "70px",
+            maxWidth: "1400px",
+            margin: "0 auto"
+          }}
+        >
+          {children}
+        </div>
       </body>
     </html>
   );
