@@ -1,9 +1,11 @@
-export default function RootLayout({ children }) {
-  return (
-    <html>
-      <body>
+type Props = {
+  children: React.ReactNode;
+};
 
-        {/* NAVIGATION HERE */}
+export default function RootLayout({ children }: Props) {
+  return (
+    <html lang="en">
+      <body>
         <nav style={{ display: "flex", gap: "20px", padding: "20px" }}>
           <a href="/">Home</a>
           <a href="/experience">Experience</a>
@@ -12,7 +14,6 @@ export default function RootLayout({ children }) {
         </nav>
 
         {children}
-
       </body>
     </html>
   );
