@@ -12,24 +12,11 @@ export default function Home() {
     <main style={{ fontFamily: "system-ui", color: "#111" }}>
 
       {/* NAV */}
-      <div style={{
-        position: "fixed",
-        top: 0,
-        width: "100%",
-        padding: "20px 40px",
-        display: "flex",
-        justifyContent: "space-between",
-        fontSize: "14px",
-        background: "rgba(255,255,255,0.8)",
-        backdropFilter: "blur(10px)"
-      }}>
-        <div>Husik Martirosyan</div>
-        <div style={{ display: "flex", gap: "20px" }}>
-          <span>About</span>
-          <span>Experience</span>
-          <span>Impact</span>
-          <span>Contact</span>
-        </div>
+      <div style={{ display: "flex", gap: "20px" }}>
+        <a href="/#about">About</a>
+        <a href="/experience">Experience</a>
+        <a href="/projects">Projects</a>
+        <a href="/contact">Contact</a>
       </div>
 
       {/* HERO */}
