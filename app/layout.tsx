@@ -1,18 +1,18 @@
-import "./globals.css";
-import { Inter, Playfair_Display } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
-const playfair = Playfair_Display({ subsets: ["latin"] });
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html>
+      <body>
+
+        {/* NAVIGATION HERE */}
+        <nav style={{ display: "flex", gap: "20px", padding: "20px" }}>
+          <a href="/">Home</a>
+          <a href="/experience">Experience</a>
+          <a href="/projects">Projects</a>
+          <a href="/contact">Contact</a>
+        </nav>
+
         {children}
+
       </body>
     </html>
   );
