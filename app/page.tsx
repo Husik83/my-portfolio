@@ -11,14 +11,6 @@ export default function Home() {
   return (
     <main style={{ fontFamily: "system-ui", color: "#111" }}>
 
-      {/* NAV */}
-      <div style={{ display: "flex", gap: "20px" }}>
-        <a href="/#about">About</a>
-        <a href="/experience">Experience</a>
-        <a href="/projects">Projects</a>
-        <a href="/contact">Contact</a>
-      </div>
-
       {/* HERO */}
       <section style={{
         height: "100vh",
