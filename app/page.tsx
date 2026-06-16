@@ -1,65 +1,137 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0 }
+};
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main style={{ fontFamily: "system-ui", color: "#111" }}>
+
+      {/* NAV */}
+      <div style={{
+        position: "fixed",
+        top: 0,
+        width: "100%",
+        padding: "20px 40px",
+        display: "flex",
+        justifyContent: "space-between",
+        fontSize: "14px",
+        background: "rgba(255,255,255,0.8)",
+        backdropFilter: "blur(10px)"
+      }}>
+        <div>Husik Martirosyan</div>
+        <div style={{ display: "flex", gap: "20px" }}>
+          <span>About</span>
+          <span>Experience</span>
+          <span>Impact</span>
+          <span>Contact</span>
+        </div>
+      </div>
+
+      {/* HERO */}
+      <section style={{
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "0 24px",
+        position: "relative",
+        overflow: "hidden"
+      }}>
+
+        {/* background image layer */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "url('https://images.unsplash.com/photo-1523240795612-9a054b0db644')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "brightness(0.4)"
+        }} />
+
+        {/* content */}
+        <div style={{
+          position: "relative",
+          zIndex: 2,
+          maxWidth: "900px",
+          color: "white"
+        }}>
+
+          <h1 style={{
+            fontSize: "76px",
+            fontWeight: 400,
+            letterSpacing: "-2px",
+            lineHeight: 1.05
+          }}>
+            Husik Martirosyan
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p style={{
+            fontSize: "22px",
+            marginTop: "20px",
+            maxWidth: "700px",
+            opacity: 0.9
+          }}>
+            Educational systems leader working at the intersection of leadership,
+            policy, and large-scale school transformation.
           </p>
+
+          <p style={{
+            marginTop: "20px",
+            fontSize: "14px",
+            opacity: 0.7
+          }}>
+            Yerevan · Education Systems · Leadership · Policy
+          </p>
+
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+      </section>
+
+      {/* IMPACT */}
+      <section style={{ padding: "140px 40px", background: "#f6f6f6" }}>
+        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+
+          <h2 style={{ fontSize: "12px", letterSpacing: "3px", color: "#999" }}>
+            IMPACT
+          </h2>
+
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "30px",
+            fontSize: "18px",
+            marginTop: "30px"
+          }}>
+            <div>14,000+ students impacted</div>
+            <div>75 educators coached</div>
+            <div>4 regions of Armenia</div>
+            <div>Government + NGO partnerships</div>
+          </div>
+
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* CONTACT */}
+      <section style={{
+        padding: "140px 40px",
+        textAlign: "center",
+        background: "#111",
+        color: "white"
+      }}>
+        <h2 style={{ fontSize: "12px", letterSpacing: "3px", color: "#aaa" }}>
+          CONTACT
+        </h2>
+
+        <p style={{ fontSize: "20px", marginTop: "20px" }}>
+          husiktfa@gmail.com · LinkedIn · Armenia
+        </p>
+      </section>
+
+    </main>
   );
 }
