@@ -1,11 +1,11 @@
 "use client";
 
 const btnStyle = {
-    padding: "8px 14px",
+    padding: "6px 10px",
     borderRadius: "999px",
     border: "1px solid rgba(0,0,0,0.15)",
     textDecoration: "none",
-    fontSize: "14px",
+    fontSize: "13px",
     color: "#111",
     background: "rgba(9, 87, 213, 0.15)",
     cursor: "pointer"
@@ -48,7 +48,16 @@ export default function Navbar() {
             </a>
 
             {/* RIGHT NAV */}
-            <div style={{ display: "flex", gap: "10px" }}>
+            <div
+                style={{
+                    display: "flex",
+                    gap: "8px",
+                    flexWrap: "wrap",
+                    justifyContent: "flex-end",
+                    alignItems: "center",
+                    maxWidth: "70%"
+                }}
+            >
                 <a href="/" style={btnStyle}>Home</a>
                 <a href="/experience" style={btnStyle}>Experience</a>
                 <a href="/projects" style={btnStyle}>Projects</a>

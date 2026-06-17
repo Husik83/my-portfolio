@@ -45,7 +45,7 @@ export default function Experience() {
 
                 {/* DOWNLOAD RESUME */}
                 <a
-                    href="/resume.pdf"
+                    href="/Husik_Martirosyan_resume.pdf"
                     download
                     style={{
                         display: "block",
