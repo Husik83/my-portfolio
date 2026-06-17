@@ -11,6 +11,8 @@ export default function Home() {
         style={{
           minHeight: "100vh",
           display: "flex",
+          flexWrap: "wrap",
+          gap: "8px",
           alignItems: "center",
           justifyContent: "space-between",
           padding: "0 20px",
@@ -105,7 +107,7 @@ export default function Home() {
           }}>
             ABOUT ME
           </h2>
-          <p style={{
+          <h3 style={{
             marginTop: "20px",
             marginBottom: "20px",
             fontSize: "16px",
@@ -115,47 +117,28 @@ export default function Home() {
             textAlign: "justify",
             fontWeight: 400,
           }}>
-            I believe sustainable transformation happens when leadership,
-            policy, and community engagement work together.
-
-          </p>
-
-          <p style={{
-            marginTop: "20px",
-            marginBottom: "20px",
-            fontSize: "16px",
-            color: "#666",
-            lineHeight: "1.6",
-            maxWidth: "950px",
-            textAlign: "justify",
-            fontWeight: 400,
-          }}>
-
-            I come from Stepanavan in Lori, Armenia, and for more than a decade,
-            I have dedicated my work to education, community development,
-            and strengthening civil society. My journey began with a simple belief
-            that education can change the trajectory of my life, and that of others.
-          </p>
-
-          <p style={{
-            marginTop: "20px",
-            marginBottom: "0px",
-            fontSize: "16px",
-            color: "#666",
-            lineHeight: "1.6",
-            maxWidth: "950px",
-            textAlign: "justify",
-            fontWeight: 400,
-          }}>
-            Through my work in the non-profit sector, I have focused on expanding opportunities for youth, supporting non-formal education, and contributing to good governance in Armenia by strengthening public accountability and transparency.
-
-            A defining chapter of my journey was my experience with Teach For Armenia, where I served for nearly six years, including three as Head of Region, having an impact on more than 14000 students.
-
-            I have also worked with World Vision Armenia on community-based development in rural regions and collaborated with global networks of US Government alumni and the Teach For ALL network.
-
-            Today, my leadership is guided by empathy, resilience, and a belief in collective impact. I try to stay close to people, grounded in their realities, while working toward long-term systemic change.
-          </p>
-
+            <p>
+              I believe sustainable transformation happens when leadership,
+              policy, and community engagement work together.
+            </p>
+            <p>I come from Stepanavan in Lori, Armenia, and for more than a decade,
+              I have dedicated my work to education, community development,
+              and strengthening civil society. My journey began with a simple belief
+              that education can change the trajectory of my life, and that of others.
+            </p>
+            <p>Through my work in the non-profit sector, I have focused on expanding opportunities
+              for youth, supporting non-formal education, and contributing to good governance in Armenia
+              by strengthening public accountability and transparency. A defining chapter of my journey
+              was my experience with Teach For Armenia, where I served for nearly six years,
+              including three as Head of Region, having an impact on more than 14000 students.
+              I have also worked with World Vision Armenia on community-based development in rural regions,
+              with Transparency International on good governance and democratic processes,
+              and the Center for Community Mobilization and Support on advocacy and civic participation. <br />
+              I am a member of several local and global networks, such as the US Government alumni and the Teach For ALL network. <br />
+              Today, my leadership is guided by empathy, resilience, and a belief in collective impact.
+              I try to stay close to people, grounded in their realities, while working toward long-term systemic change.
+            </p>
+          </h3>
         </div>
       </section>
 
@@ -174,10 +157,10 @@ export default function Home() {
             fontSize: "18px",
             marginTop: "30px"
           }}>
-            <div>14,000+ students impacted</div>
-            <div>75 educators coached</div>
-            <div>4 regions of Armenia</div>
-            <div>Government + NGO partnerships</div>
+            <div>30,000+ students and youth impacted</div>
+            <div>100+ educators coached</div>
+            <div>6+ regions of Armenia</div>
+            <div>Government + NGO and internationalpartnerships</div>
           </div>
 
         </div>
@@ -214,45 +197,46 @@ export default function Home() {
             {/* Card 1 */}
             <div style={{
               background: "#fff",
-              padding: "30px",
+              padding: "20px",
               borderRadius: "16px",
               border: "1px solid #eee"
             }}>
               <h3 style={{ fontSize: "18px", marginBottom: "10px" }}>
                 Innovation Strategy
               </h3>
-              <p style={{ fontSize: "14px", color: "#666", lineHeight: "1.6" }}>
-                Design and launch AI-driven initiatives that transform education.
+              <p style={{ fontSize: "14px", color: "#666", lineHeight: "1.6", textAlign: "justify" }}>
+                Focused on helping people and institutions in leveraging technologies and innovative solutions.
               </p>
             </div>
 
             {/* Card 2 */}
             <div style={{
               background: "#fff",
-              padding: "30px",
+              padding: "20px",
               borderRadius: "16px",
               border: "1px solid #eee"
             }}>
               <h3 style={{ fontSize: "18px", marginBottom: "10px" }}>
-                Organizational Learning
+                Organizational Leadership
               </h3>
-              <p style={{ fontSize: "14px", color: "#666", lineHeight: "1.6" }}>
-                Use data to guide strategic decisions and drive continuous improvement.
+              <p style={{ fontSize: "14px", color: "#666", lineHeight: "1.6", textAlign: "justify" }}>
+                Use data and advanced toolkitts to guide strategic decisions and drive continuous improvement.
               </p>
             </div>
 
             {/* Card 3 */}
             <div style={{
               background: "#fff",
-              padding: "30px",
+              padding: "20px",
               borderRadius: "16px",
-              border: "1px solid #eee"
+              border: "1px solid #eee",
+
             }}>
-              <h3 style={{ fontSize: "18px", marginBottom: "10px" }}>
-                Executive Coaching
+              <h3 style={{ fontSize: "18px", marginBottom: "10px", textAlign: "center" }}>
+                Coaching
               </h3>
-              <p style={{ fontSize: "14px", color: "#666", lineHeight: "1.6" }}>
-                Advise leaders on change management and leadership development.
+              <p style={{ fontSize: "14px", color: "#666", lineHeight: "1.6", textAlign: "justify" }}>
+                Advise leaders on organizational behavior and leadership development.
               </p>
             </div>
 

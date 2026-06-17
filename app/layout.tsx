@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-
+import PageTransition from "./components/PageTransition";
 type Props = {
   children: React.ReactNode;
 };
@@ -25,8 +25,10 @@ export default function RootLayout({ children }: Props) {
             margin: "0 auto"
           }}
         >
-          {children}
         </div>
+        <PageTransition>
+          {children}
+        </PageTransition>
       </body>
     </html>
   );

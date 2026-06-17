@@ -1,23 +1,59 @@
 "use client";
 import Section from "../components/Section";
+import { useFirstLoad } from "../components/useFirstLoad";
+import { useEffect, useState } from "react";
 export default function Experience() {
+    const [showBg, setShowBg] = useState(false);
+    useEffect(() => {
+        // background first
+        setShowBg(true);
+        <img
+            src="/hero.jpg"
+            alt=""
+            decoding="async"
+            fetchPriority="high"
+            style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                filter: "brightness(0.55)",
+                opacity: 1,
+                transform: "none"
+            }}
+        />
+
+        // content after 1 second
+        const timer = setTimeout(() => {
+            setShowContent(true);
+        }, 600);
+
+        return () => clearTimeout(timer);
+    }, []);
+    const [showContent, setShowContent] = useState(false);
+    const firstLoad = useFirstLoad();
+    const [loaded, setLoaded] = useState(false);
+
+
+    useEffect(() => {
+        setShowBg(true);
+    }, []);
     return (
         <main style={{ position: "relative", minHeight: "100vh" }}>
+
 
             {/* BACKGROUND */}
             <div
                 style={{
                     position: "fixed",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
+                    inset: 0,
+                    zIndex: -2,
                     backgroundImage: "url('/hero.jpg')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
-                    filter: "blur(12px) brightness(0.6)",
-                    transform: "scale(1.1)",
-                    zIndex: -1
+                    filter: "brightness(0.45)",
+                    transform: "translateZ(0)", // forces GPU render, prevents flicker
                 }}
             />
 
@@ -26,19 +62,18 @@ export default function Experience() {
                 style={{
                     maxWidth: "1000px",
                     margin: "0 auto",
-                    color: "#fff",
-                    padding: "40px 20px",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "0px"
+                    opacity: showContent ? 1 : 0,
+                    transform: showContent ? "translateY(0px)" : "translateY(20px)",
+                    transition: "opacity 0.8s ease, transform 0.8s ease"
                 }}
             >
 
                 {/* TITLE */}
                 <h1 style={{
-                    fontSize: "45px",
+                    fontSize: "clamp(28px, 5vw, 45px)",
                     fontWeight: 500,
-                    marginBottom: "20px"
+                    marginBottom: "20px",
+                    color: "white"
                 }}>
                     Experience
                 </h1>
@@ -82,7 +117,13 @@ export default function Experience() {
                     <div>
                         {/* ROLE 1 */}
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "-6px" }}>
-                            <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#4e4b4b", margin: 0 }}>
+                            <h3 style={{
+                                fontSize: "18px",
+                                fontWeight: 800,
+                                color: "#4e4b4b",
+                                margin: 0,
+                                flex: "1"
+                            }}>
                                 School Turnaround Officer | Seroond Catalyst Program
                             </h3>
                             <div style={{ padding: "6px 12px", borderRadius: "999px", background: "rgba(0,0,0,0.08)", fontSize: "13px", color: "#111", fontWeight: 500 }}>
@@ -102,7 +143,13 @@ export default function Experience() {
 
                         {/* ROLE 2 */}
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "-6px" }}>
-                            <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#4e4b4b", margin: 0 }}>
+                            <h3 style={{
+                                fontSize: "18px",
+                                fontWeight: 800,
+                                color: "#4e4b4b",
+                                margin: 0,
+                                flex: "1"
+                            }}>
                                 Head of Region
                             </h3>
                             <div style={{ padding: "6px 12px", borderRadius: "999px", background: "rgba(0,0,0,0.08)", fontSize: "13px", color: "#111", fontWeight: 500 }}>
@@ -122,7 +169,13 @@ export default function Experience() {
 
                         {/* ROLE 3 */}
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "-6px" }}>
-                            <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#4e4b4b", margin: 0 }}>
+                            <h3 style={{
+                                fontSize: "18px",
+                                fontWeight: 800,
+                                color: "#4e4b4b",
+                                margin: 0,
+                                flex: "1"
+                            }}>
                                 Senior Leadership Development Manager
                             </h3>
                             <div style={{ padding: "6px 12px", borderRadius: "999px", background: "rgba(0,0,0,0.08)", fontSize: "13px", color: "#111", fontWeight: 500 }}>
@@ -141,7 +194,13 @@ export default function Experience() {
 
                         {/* ROLE 4 */}
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "-6px" }}>
-                            <h3 style={{ fontSize: "18px", fontWeight: 800, color: "#4e4b4b", margin: 0 }}>
+                            <h3 style={{
+                                fontSize: "18px",
+                                fontWeight: 800,
+                                color: "#4e4b4b",
+                                margin: 0,
+                                flex: "1"
+                            }}>
                                 Teacher-Leader
                             </h3>
                             <div style={{ padding: "6px 12px", borderRadius: "999px", background: "rgba(0,0,0,0.08)", fontSize: "13px", color: "#111", fontWeight: 500 }}>
@@ -288,80 +347,71 @@ export default function Experience() {
                 </Section>
                 {/* ===== SKILLS ===== */}
                 <Section title="Skills" color="#eaf0ed">
+
                     <div style={{
                         display: "grid",
-                        gridTemplateColumns: "1fr 1fr",
+                        gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                         gap: "20px"
                     }}>
-                        <SkillBox title="Productivity" />
 
-                        <SkillBox title="Policy Design" />
+                        {/* BOX 1 */}
+                        <div style={{
+                            padding: "16px",
+                            borderRadius: "12px",
+                            background: "#ffffff",
+                            boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+                            color: "#24552f"
+                        }}>
+                            <h3 style={{ margin: 0, fontSize: "16px", fontWeight: 700 }}>
+                                Productivity
+                            </h3>
+
+                            <p style={{ fontSize: "13px", marginTop: "10px", lineHeight: "1.5", color: "#166534" }}>
+                                Microsoft Office, Google Workspace, <br />
+                                Salesforce, Asana, Jira, Canva, Padlet, <br />
+                                ERP tools and AI tools.
+                            </p>
+                        </div>
+
+                        {/* BOX 2 */}
+                        <div style={{
+                            padding: "16px",
+                            borderRadius: "12px",
+                            background: "#ffffff",
+                            boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+                            color: "#24552f"
+                        }}>
+                            <h3 style={{ margin: 0, fontSize: "16px", fontWeight: 700 }}>
+                                Programming
+                            </h3>
+
+                            <p style={{ fontSize: "13px", marginTop: "10px", lineHeight: "1.5", color: "#166534" }}>
+                                Python, JavaScript (React, Next.js), HTML, CSS.
+
+                            </p>
+                        </div>
+
+                        {/* BOX 3 */}
+                        <div style={{
+                            padding: "16px",
+                            borderRadius: "12px",
+                            background: "#ffffff",
+                            boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+                            color: "#24552f"
+                        }}>
+                            <h3 style={{ margin: 0, fontSize: "16px", fontWeight: 700 }}>
+                                Languages
+                            </h3>
+
+                            <p style={{ fontSize: "13px", marginTop: "10px", lineHeight: "1.5", color: "#166534" }}>
+                                Armenian (Native), English (Fluent), Russian (Proficient), Spanish (Intermediate).
+                            </p>
+                        </div>
+
                     </div>
-                    <div style={{ marginTop: "20px" }}>
-                        <SkillBox title="Strategic Planning" />
-                    </div>
+
                 </Section>
-
-            </div >
-        </main >
+            </div>
+        </main>
     );
 }
-
-/* ===== SECTION COMPONENT ===== */
-function SkillBox({ title }: any) {
-
-    const getDescription = (title: string) => {
-        switch (title) {
-            case "Productivity":
-                return (
-                    <>
-                        Microsoft Office Suite, Google Workplace, Salesforce, Asana, Jira, Canvas, Padlet, ERP, AI tools.
-                        <br />
-                        Focused on optimizing workflows, managing time effectively, and improving output through structured systems and habits.
-                    </>
-                );
-
-            case "Programming":
-                return (
-                    <>
-                        Python, JavaScript (Next.js, React), SQL, HTML, CSS
-                    </>
-                );
-
-            case "Languages":
-                return (
-                    <>
-                        Armenian (Native), English & Russian (Proficient), Spanish (Intermediate)
-                    </>
-                );
-
-            default:
-                return null;
-        }
-    };
-
-    return (
-        <div style={{
-            padding: "16px",
-            borderRadius: "12px",
-            background: "#ffffff",
-            fontWeight: 700,
-            color: "#16a34a",
-            fontSize: "16px",
-            textAlign: "center",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.05)"
-        }}>
-            {title}
-
-            <div style={{
-                marginTop: "8px",
-                fontWeight: 400,
-                fontSize: "13px",
-                color: "#166534",
-                lineHeight: "1.4"
-            }}>
-                {getDescription(title)}
-            </div>
-        </div>
-    );
-} 

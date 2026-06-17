@@ -6,7 +6,14 @@ export default function Section({ title, color, children }: any) {
             borderRadius: "16px",
             marginBottom: "24px"
         }}>
-            <h2>{title}</h2>
+            <h2 style={{
+                color: "#24552f",
+                marginTop: 0,
+                marginBottom: "16px",
+                fontSize: "22px"
+            }}>
+                {title}
+            </h2>
             {children}
         </div>
     );
