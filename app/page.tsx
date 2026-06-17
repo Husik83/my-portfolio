@@ -1,6 +1,8 @@
 "use client";
+import { useScrollReveal } from "./hooks/useScrollReveal";
 
 export default function Home() {
+  useScrollReveal();
   return (
     <main>
 
@@ -11,7 +13,7 @@ export default function Home() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: "0 40px",
+          padding: "0 20px",
           paddingTop: "10px", // 👈 IMPORTANT adjustment
           position: "relative",
           overflow: "hidden"
@@ -62,49 +64,103 @@ export default function Home() {
       </section>
       {/* MISSION */}
       <section style={{
-        padding: "120px 40px",
-        background: "#fff"
+        padding: "50px 20px",
+        background: "#fff",
+        marginTop: "7px",
+        marginBottom: "7px",
       }}>
         <div style={{
           maxWidth: "900px",
-          margin: "0 auto"
+          margin: "0 auto",
+          transform: "translateY(-40px)"
         }}>
 
           <h2 style={{
-            fontSize: "16px",
+            fontSize: "17px",
             letterSpacing: "3px",
-            color: "#999",
-            marginBottom: "20px"
+            color: "#136a26",
+            marginBottom: "0px",
+            fontWeight: 800,
           }}>
             MISSION
           </h2>
 
           <p style={{
-            fontSize: "28px",
+            fontSize: "17px",
             lineHeight: "1.4",
-            fontWeight: 400,
-            color: "#111"
+            fontWeight: 700,
+            color: "#666"
+
           }}>
-            I work at the intersection of education leadership, systems change, and policy design,
-            focused on building scalable and equitable learning environments across Armenia.
+            My mission is to advance educational excellence and contribute
+            to systemic change that makes learning environments more
+            innovative and impactful in Armenia.
+          </p>
+          <h2 style={{
+            fontSize: "16px",
+            letterSpacing: "3px",
+            color: "#999",
+            marginBottom: "10px",
+            marginTop: "50px"
+          }}>
+            ABOUT ME
+          </h2>
+          <p style={{
+            marginTop: "20px",
+            marginBottom: "20px",
+            fontSize: "16px",
+            color: "#666",
+            lineHeight: "1.6",
+            maxWidth: "950px",
+            textAlign: "justify",
+            fontWeight: 400,
+          }}>
+            I believe sustainable transformation happens when leadership,
+            policy, and community engagement work together.
+
           </p>
 
           <p style={{
             marginTop: "20px",
+            marginBottom: "20px",
             fontSize: "16px",
             color: "#666",
             lineHeight: "1.6",
-            maxWidth: "750px"
+            maxWidth: "950px",
+            textAlign: "justify",
+            fontWeight: 400,
           }}>
-            My work focuses on strengthening school leadership, supporting educators,
-            and designing system-level interventions that improve student outcomes at scale.
+
+            I come from Stepanavan in Lori, Armenia, and for more than a decade,
+            I have dedicated my work to education, community development,
+            and strengthening civil society. My journey began with a simple belief
+            that education can change the trajectory of my life, and that of others.
+          </p>
+
+          <p style={{
+            marginTop: "20px",
+            marginBottom: "0px",
+            fontSize: "16px",
+            color: "#666",
+            lineHeight: "1.6",
+            maxWidth: "950px",
+            textAlign: "justify",
+            fontWeight: 400,
+          }}>
+            Through my work in the non-profit sector, I have focused on expanding opportunities for youth, supporting non-formal education, and contributing to good governance in Armenia by strengthening public accountability and transparency.
+
+            A defining chapter of my journey was my experience with Teach For Armenia, where I served for nearly six years, including three as Head of Region, having an impact on more than 14000 students.
+
+            I have also worked with World Vision Armenia on community-based development in rural regions and collaborated with global networks of US Government alumni and the Teach For ALL network.
+
+            Today, my leadership is guided by empathy, resilience, and a belief in collective impact. I try to stay close to people, grounded in their realities, while working toward long-term systemic change.
           </p>
 
         </div>
       </section>
 
       {/* IMPACT */}
-      <section style={{ padding: "70px 40px", background: "#f6f6f6" }}>
+      <section style={{ padding: "50px 20px", background: "#f6f6f6" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
 
           <h2 style={{ fontSize: "16px", letterSpacing: "3px", color: "#999" }}>
@@ -129,19 +185,22 @@ export default function Home() {
 
       {/* AREAS OF EXPERTISE */}
       <section style={{
-        padding: "70px 40px",
+        padding: "30px 20px",
         background: "#fafafa"
       }}>
         <div style={{
-          maxWidth: "1000px",
-          margin: "0 auto"
+          maxWidth: "900px",
+          marginBottom: "10",
+          marginLeft: "10",
+          margin: "0 auto",
         }}>
 
           <h2 style={{
             fontSize: "16px",
             letterSpacing: "3px",
             color: "#999",
-            marginBottom: "40px"
+            marginBottom: "40px",
+            textAlign: "center"
           }}>
             AREAS OF EXPERTISE
           </h2>
@@ -205,7 +264,7 @@ export default function Home() {
       <section
         id="contact"
         style={{
-          padding: "30px 20px",
+          padding: "50px 20px",
           textAlign: "center",
           background: "#174433",
           color: "white"
@@ -220,7 +279,7 @@ export default function Home() {
           alignItems: "center",
           gap: "16px",
           marginTop: "20px",
-          fontSize: "16px"
+          fontSize: "15px"
         }}>
 
           <a
@@ -285,6 +344,6 @@ export default function Home() {
         © 2026, Husik Martirosyan. All rights reserved.
       </footer>
 
-    </main>
+    </main >
   );
 }
