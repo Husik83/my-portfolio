@@ -108,7 +108,12 @@ export default function Experience() {
                 {/* ===== SUMMARY ===== */}
                 <Section title="Summary" color="#eaf0ed">
                     <p style={{ color: "#444", margin: 0, lineHeight: "1.6" }}>
-                        Values-driven educational leader with 10+ years of experience in program management, educator development, and stakeholder engagement across school and nonprofit education settings. Experienced in designing student-led educational initiatives, leading cross-functional teams, and building collaborative learning ecosystems that support whole-child development and academic growth. Passionate about empowering educators and students through transformational leadership and sustainable programs aligned with innovative and inclusive educational approaches.
+                        10+ years of experience in program management, educator development,
+                        and stakeholder engagement across school and nonprofit education settings.
+                        Experienced in designing student-led educational initiatives, leading cross-functional teams,
+                        and building collaborative learning ecosystems that support whole-child development and academic growth.
+                        Passionate about empowering educators and students through transformational leadership
+                        and sustainable programs aligned with innovative and inclusive educational approaches.
                     </p>
                 </Section>
 
